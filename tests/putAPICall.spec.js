@@ -4,17 +4,17 @@ test("put request api call @put @API", async ({request})=>
 
     {
  const putResquest = await request.put('/booking/1', {
-    headers: {
-        Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=",
-           },
+    // headers: {
+    //     Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=",
+    //        },
     data: {
-        "firstname" : "Rahul",
-        "lastname" : "Ranjan",
-        "totalprice" : 499,
+        "firstname" : "murari",
+        "lastname" : "lal",
+        "totalprice" : 399,
         "depositpaid" : true,
         "bookingdates" : {
-            "checkin" : "2025-02-09",
-            "checkout" : "2025-03-10"
+            "checkin" : "2025-02-20",
+            "checkout" : "2025-03-12"
         },
         "additionalneeds" : "Breakfast"
     }
@@ -22,8 +22,10 @@ test("put request api call @put @API", async ({request})=>
 
     console.log(await putResquest.status()); // 200
     console.log(await putResquest.statusText()); // OK
-    console.log(await putResquest.json()); // 200
+    const editedResponsejson = await putResquest.json(); // 200
     const fetchresponse = await request.get('/booking/1');
-    console.log(await fetchresponse.json()); // 200
+    const getbookingIDjson= await fetchresponse.json(); // 200
+    expect(getbookingIDjson).toEqual(editedResponsejson); // 200
+    expect(getbookingIDjson.firstname).toEqual(editedResponsejson.firstname); // 200
     
 })

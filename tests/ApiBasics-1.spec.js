@@ -59,8 +59,7 @@ test.only('test levle setup api get call', async () => {
          const respon5 = await forAllTestContext.get('/booking?checkin=2018-01-01&checkout=2019-01-01');
          //console.log(await respon5.json());
          //console.log(await respon5.status()); // 200
-         const response6 = await forAllTestContext.get('/booking/1016');
-         console.log(await response6.json());
+    
 
 
 });
