@@ -1,6 +1,6 @@
 import {test , expect} from '@playwright/test';
 
-test('end toend visual test', async ({ page })=>
+test('end to end visual test', async ({ page })=>
 {
   await page.goto('https://demowebshop.tricentis.com/login');
   await expect(page).toHaveScreenshot("login-page.png"); //!capture the screenshot of the login page

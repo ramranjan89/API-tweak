@@ -28,4 +28,5 @@ test("put request api call @put @API", async ({request})=>
     expect(getbookingIDjson).toEqual(editedResponsejson); // 200
     expect(getbookingIDjson.firstname).toEqual(editedResponsejson.firstname); // 200
     
+    
 })

@@ -13,8 +13,9 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir: './authsessionpract',
   //grep: /@smoke|@UI/,//@smoke
+  //globalSetup: './global-auth-setup',
     
   /* Run tests in files in parallel */
   fullyParallel: false,
@@ -27,16 +28,16 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html', { open: 'off' }]],
+  reporter: [['html', { open: 'off' }], ['allure-playwright']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-     baseURL: 'https://restful-booker.herokuapp.com', //!this is global setup for api base url
-     extraHTTPHeaders: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=",
-     },
+    //  baseURL: 'https://restful-booker.herokuapp.com', //!this is global setup for api base url
+    //  extraHTTPHeaders: {
+    //   Accept: 'application/json',
+    //   'Content-Type': 'application/json',
+    //   Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=",
+    //  },
     // expect: {
     //   toHaveScreenshot: {
     //     maxDiffPixelRatio: 0.4,
@@ -45,16 +46,26 @@ export default defineConfig({
     // },
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'on',
     screenshots: 'only-on-failure',
     video: 'on-first-retry',
+    //storageState: './globalauth/setup1.json',
   },
-
+  
   /* Configure projects for major browsers */
   projects: [
     {
+    name: 'setup',
+    testMatch: 'authpractice.spec.js',
+    },
+
+    {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      dependencies: ['setup'],
+      use: { ...devices['Desktop Chrome'],
+        storageState: 'authState.json',
+       },
+      
     },
 
     // {
