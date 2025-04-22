@@ -1,0 +1,10 @@
+{
+  user: {
+    email: 'ramranjanjha89.rr@gmail.com',
+    username: 'ramranjan',
+    bio: null,
+    image: 'https://conduit-api.bondaracademy.com/images/smiley-cyrus.jpeg',
+    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyMzQxMX0sImlhdCI6MTc0NTM1NTU1MywiZXhwIjoxNzUwNTM5NTUzfQ.jqiDQRHtIXl04fqcQGGd_hm4vspsgHdZxZx9RMuHetI'
+  }
+}
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyMzQxMX0sImlhdCI6MTc0NTM1NTU1MywiZXhwIjoxNzUwNTM5NTUzfQ.jqiDQRHtIXl04fqcQGGd_hm4vspsgHdZxZx9RMuHetI

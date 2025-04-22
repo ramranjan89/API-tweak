@@ -1,4 +1,2 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","30348","Login and save auth state","chromium","Tue Apr 22 18:33:24 IST 2025","broken","Tue Apr 22 18:33:54 IST 2025","","authpractice.spec.js","",""
-"","13809","Login and save auth state","setup","Tue Apr 22 18:33:07 IST 2025","passed","Tue Apr 22 18:33:20 IST 2025","","authpractice.spec.js","",""
-"","20656","Validate OrangeHRM Dashboard","chromium","Tue Apr 22 18:33:24 IST 2025","passed","Tue Apr 22 18:33:45 IST 2025","","auth-prac-1.spec.js","",""
+"","11216","login test validation","chromium","Wed Apr 23 02:29:45 IST 2025","passed","Wed Apr 23 02:29:57 IST 2025","","apiui.spec.js","",""

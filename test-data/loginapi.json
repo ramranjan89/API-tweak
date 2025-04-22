@@ -1,0 +1,22 @@
+{
+
+   "loginAPIjson" :{
+        "user": {
+            "email": "ramranjanjha89.rr@gmail.com",
+            "password": "8271554461@r"
+        }
+    },
+
+    "tagsjson": {
+        "tags": [
+            "Test",
+            "Bondar Academy",
+            "YouTube",
+            "qa career",
+            "automated",
+            "mocked",
+            "playwright",
+            "Live Sessions"
+        ]
+    }
+}

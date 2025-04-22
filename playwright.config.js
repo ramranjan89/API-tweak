@@ -13,7 +13,7 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: './authsessionpract',
+  testDir: './tests',
   //grep: /@smoke|@UI/,//@smoke
   //globalSetup: './global-auth-setup',
     
@@ -32,12 +32,11 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    //  baseURL: 'https://restful-booker.herokuapp.com', //!this is global setup for api base url
-    //  extraHTTPHeaders: {
-    //   Accept: 'application/json',
-    //   'Content-Type': 'application/json',
-    //   Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=",
-    //  },
+     baseURL: 'https://conduit-api.bondaracademy.com', //!this is global setup for api base url
+     extraHTTPHeaders: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+     },
     // expect: {
     //   toHaveScreenshot: {
     //     maxDiffPixelRatio: 0.4,
@@ -54,16 +53,16 @@ export default defineConfig({
   
   /* Configure projects for major browsers */
   projects: [
-    {
-    name: 'setup',
-    testMatch: 'authpractice.spec.js',
-    },
+    // {
+    // name: 'setup',
+    // testMatch: 'authpractice.spec.js',
+    // },
 
     {
       name: 'chromium',
-      dependencies: ['setup'],
+     // dependencies: ['setup'],
       use: { ...devices['Desktop Chrome'],
-        storageState: 'authState.json',
+        //storageState: 'authState.json',
        },
       
     },
